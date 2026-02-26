@@ -15,31 +15,31 @@ const certs: {
 }[] = [
   {
     icon: GraduationCap,
-    name: "Computer Systems Engineering B.Sc.",
-    issuer: "University Degree",
+    name: "B.Sc. Computer Systems Engineering",
+    issuer: "Fidelitas University · 2020 – 2024",
     status: "completed",
     label: "Graduated",
   },
   {
     icon: Award,
-    name: "AWS Certified Cloud Practitioner",
-    issuer: "Amazon Web Services",
-    status: "target",
-    label: "Target",
+    name: "Data Science",
+    issuer: "Smart Data · Oct 2024 – Jan 2025",
+    status: "completed",
+    label: "Completed",
   },
   {
     icon: Container,
-    name: "Kubernetes & Container Orchestration",
-    issuer: "Self-Directed Training",
+    name: "Containers & Kubernetes",
+    issuer: "Docker · Kubernetes · Hands-on",
     status: "in-progress",
     label: "In Progress",
   },
   {
     icon: Layers,
-    name: "Infrastructure as Code",
-    issuer: "Terraform & Pulumi",
-    status: "in-progress",
-    label: "In Progress",
+    name: "AWS Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    status: "target",
+    label: "Target",
   },
 ];
 

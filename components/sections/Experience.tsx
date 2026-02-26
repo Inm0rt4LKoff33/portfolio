@@ -6,36 +6,36 @@ import SkillTag from "@/components/ui/SkillTag";
 
 const experiences = [
   {
-    date: "2024 — Present",
-    role: "DevOps & Cloud Engineering — Self-Directed",
-    company: "Learning & Personal Projects",
+    date: "Jan 2026 — Present",
+    role: "Cloud & Infrastructure Engineer",
+    company: "Freelance · San José, Costa Rica",
     description:
-      "Actively transitioning into DevOps and Cloud computing. Studying core AWS services (EC2, VPC, IAM, S3, Security Groups) and infrastructure-as-code with Terraform and Pulumi. Exploring Kubernetes architecture — Pods, Clusters, Deployments, and Ingress — and how it integrates with AWS. Building hands-on projects to solidify real-world readiness.",
-    tags: ["AWS", "Terraform", "Pulumi", "Kubernetes", "EC2", "IAM", "VPC", "S3"],
+      "Assisted in provisioning AWS infrastructure using Terraform — EC2 instances, IAM roles, VPC configurations, and security groups. Containerized applications with Docker and deployed workloads to Kubernetes clusters. Supported CI/CD pipeline implementation via GitHub Actions and managed application servers in Linux-based cloud environments. Gained practical exposure to networking concepts such as subnets, routing tables, and access control policies.",
+    tags: ["AWS", "Terraform", "Docker", "Kubernetes", "GitHub Actions", "Linux"],
   },
   {
-    date: "2022 — 2024",
-    role: "Web Developer",
-    company: "Soporte Completo",
+    date: "Sep 2023 — Aug 2024",
+    role: "Web Developer — Customer Support Platform",
+    company: "Soporte Completo S.A · San José, Costa Rica",
     description:
-      "Built and maintained an internal Admin Dashboard for day-to-day business operations. Took ownership of the full development cycle — from requirements gathering to deployment — delivering a reliable interface that streamlined internal workflows.",
-    tags: ["React", "Node.js", "REST APIs", "Dashboard", "Git"],
+      "Led the architecture, development, and deployment of a production web platform supporting operational business processes. Designed backend systems using ASP.NET Core and SQL Server with emphasis on maintainability and scalability. Established structured CI/CD workflows to improve release consistency and deployment reliability. Collaborated cross-functionally within an Agile framework to translate business requirements into technical solutions.",
+    tags: ["ASP.NET Core", "SQL Server", "CI/CD", "Agile", "REST APIs"],
   },
   {
-    date: "2021 — 2022",
-    role: "Full-Stack Web Developer",
-    company: "Ronald McDonald House Charities",
+    date: "Apr 2024 — Jul 2024",
+    role: "Web Developer — Hospitality Web Portal",
+    company: "Ronald McDonald's House of Charities Costa Rica · San José, Costa Rica",
     description:
-      "Developed a Hospitality Web Platform for Ronald McDonald's, enabling staff to manage guest stays, resources, and operational logistics. Built with a focus on usability and reliability for a non-profit environment where uptime and clarity matter.",
-    tags: ["Full-Stack", "Web Platform", "Node.js", "React", "PostgreSQL"],
+      "Designed and implemented a centralized digital platform to support internal operations and data management. Structured role-based access control mechanisms for secure information handling. Led data migration into a consolidated SQL Server environment, architecting a secure system that improved internal digital workflow organization.",
+    tags: ["SQL Server", "Role-Based Access Control", "Data Migration", "Full-Stack"],
   },
   {
-    date: "2020 — 2021",
-    role: "Backend Developer",
-    company: "E-Commerce Project",
+    date: "Jan 2024 — Apr 2024",
+    role: "Web Developer — E-Commerce Integration",
+    company: "Freelance · San José, Costa Rica",
     description:
-      "Designed and implemented a Web API dedicated to electronic billing for an e-commerce platform. Handled invoice generation, tax compliance logic, and integration with payment workflows — requiring precision and robust error handling.",
-    tags: ["REST API", "Electronic Billing", "Node.js", "E-Commerce", "Backend"],
+      "Developed secure web applications and integrated third-party APIs for transactional workflows. Designed structured database schemas and implemented testing practices to ensure production reliability. Managed full lifecycle delivery from requirement analysis to deployment and support.",
+    tags: ["REST APIs", "Node.js", "JavaScript", "MySQL", "Backend"],
   },
 ];
 

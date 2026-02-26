@@ -4,10 +4,10 @@ import { Mail, Linkedin, Github, FileDown } from "lucide-react";
 import { useReveal } from "@/components/ui/useReveal";
 
 const links = [
-  { icon: Mail,     label: "Email Me",     href: "mailto:fabimv23@protonmail.com"               },
-  { icon: Linkedin, label: "LinkedIn",     href: "https://www.linkedin.com/in/fabianmadrizcr/" },
-  { icon: Github,   label: "GitHub",       href: "https://github.com/Inm0rt4LKoff33"     },
-  { icon: FileDown, label: "Download CV",  href: "/resources/Fabian_Madriz_Cloud_Engineer_2026.pdf"                         },
+  { icon: Mail,     label: "Email Me",     href: "mailto:fabimv23@protonmail.com"       },
+  { icon: Linkedin, label: "LinkedIn",     href: "https://linkedin.com/in/yourprofile"  },
+  { icon: Github,   label: "GitHub",       href: "https://github.com/yourusername"      },
+  { icon: FileDown, label: "Download CV",  href: "/resume.pdf"                          },
 ];
 
 export default function Contact() {

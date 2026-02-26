@@ -112,9 +112,10 @@ export default function Hero() {
             animation: "fadeUp 0.7s 0.3s ease both",
           }}
         >
-          Computer Systems Engineer with a proven track record in full-stack web development — 
-          now transitioning into DevOps and Cloud. I bring real shipping experience from production 
-          platforms and APIs, combined with hands-on AWS and Kubernetes training.
+          Computer Systems Engineer with a strong background in software development
+          and a growing specialization in Cloud and DevOps. Experienced in CI/CD automation,
+          Linux-based environments, Docker, and Kubernetes — currently expanding cloud
+          infrastructure expertise through real-world freelance collaboration.
         </p>
 
         {/* CTAs */}
@@ -162,27 +163,12 @@ export default function Hero() {
           <span className="font-mono text-xs" style={{ color: "var(--text-muted)" }}>
             CORE STACK
           </span>
-          {["AWS", "Terraform", "Pulumi", "Kubernetes", "React", "Node.js", "Next.js", "Linux"].map((t) => (
+          {["AWS", "Terraform", "Docker", "Kubernetes", "GitHub Actions", "ASP.NET Core", "Node.js", "Linux"].map((t) => (
             <span key={t} className="font-mono text-xs font-medium" style={{ color: "var(--text-muted)" }}>
               {t}
             </span>
           ))}
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        style={{ animation: "fadeIn 1s 1s ease both" }}
-      >
-        <span className="font-mono text-xs tracking-widest" style={{ color: "var(--text-muted)" }}>scroll</span>
-        <div
-          className="w-px h-10"
-          style={{
-            background: "linear-gradient(to bottom, var(--accent), transparent)",
-            animation: "float 2s ease-in-out infinite",
-          }}
-        />
       </div>
     </section>
   );

@@ -8,28 +8,28 @@ import SkillTag from "@/components/ui/SkillTag";
 const projects = [
   {
     num: "01",
-    name: "Hospitality Web Platform",
+    name: "Hospitality Web Portal",
     description:
-      "Full-stack web platform built for Ronald McDonald House Charities to manage guest stays, resource allocation, and operational workflows. Focused on reliability and ease of use for non-technical staff in a high-care environment.",
-    tags: ["React", "Node.js", "PostgreSQL", "REST API", "Full-Stack"],
+      "Centralized digital platform built for Ronald McDonald's House of Charities Costa Rica to support internal operations and data management. Implemented role-based access control and led data migration into a consolidated SQL Server environment.",
+    tags: ["ASP.NET Core", "SQL Server", "RBAC", "Data Migration", "Full-Stack"],
     accent: "var(--accent)",
     link: "#",
   },
   {
     num: "02",
-    name: "Admin Dashboard — Soporte Completo",
+    name: "Customer Support Platform — Soporte Completo",
     description:
-      "Internal admin dashboard giving the Soporte Completo team a centralized view of business operations. Covered the full dev cycle from requirements to deployment, with a clean UI and real-time data updates.",
-    tags: ["React", "Node.js", "Dashboard", "REST API", "Git"],
+      "Production web platform supporting day-to-day business operations. Designed backend systems with ASP.NET Core and SQL Server, established CI/CD workflows, and delivered within an Agile cross-functional team.",
+    tags: ["ASP.NET Core", "SQL Server", "CI/CD", "REST APIs", "Agile"],
     accent: "var(--accent-light)",
     link: "#",
   },
   {
     num: "03",
-    name: "Electronic Billing Web API",
+    name: "E-Commerce Integration",
     description:
-      "Backend API handling electronic invoice generation, tax compliance logic, and payment workflow integration for an e-commerce platform. Built with precision and robust error handling given the financial nature of the domain.",
-    tags: ["REST API", "Node.js", "E-Commerce", "Billing", "Backend"],
+      "Full lifecycle delivery of secure web applications with third-party API integrations for transactional workflows. Designed structured database schemas and implemented testing practices to ensure production reliability.",
+    tags: ["Node.js", "REST APIs", "JavaScript", "MySQL", "Backend"],
     accent: "var(--accent)",
     link: "#",
   },
@@ -37,7 +37,7 @@ const projects = [
     num: "04",
     name: "E-Commerce Frontend Prototype",
     description:
-      "A modern e-commerce frontend prototype built to showcase hands-on frontend skills — product listings, cart flow, and responsive design. Deployed live on Vercel as a tangible demonstration of UI development ability.",
+      "Modern e-commerce frontend prototype showcasing hands-on frontend skills — product listings, cart flow, and responsive design. Deployed live on Vercel as a tangible demonstration of UI development ability.",
     tags: ["React", "Next.js", "Tailwind CSS", "Vercel", "Frontend"],
     accent: "var(--accent-light)",
     link: "#",  // ← replace with your Vercel URL
