@@ -6,8 +6,7 @@ import { useReveal } from "@/components/ui/useReveal";
 const links = [
   { icon: Mail,     label: "Email Me",    href: "mailto:fabimv23@protonmail.com"              },
   { icon: Linkedin, label: "LinkedIn",    href: "https://linkedin.com/in/yourprofile"          },
-  { icon: Github,   label: "GitHub",      href: "https://github.com/Inm0rt4LKoff33"           },
-  { icon: FileDown, label: "Download CV", href: "/resume.pdf"                                  },
+  { icon: Github,   label: "GitHub",      href: "https://github.com/Inm0rt4LKoff33"           }
 ];
 
 export default function Contact() {
@@ -43,7 +42,7 @@ export default function Contact() {
           className="font-mono text-sm tracking-wide mb-14 reveal"
           style={{ color: "var(--text-muted)" }}
         >
-          Open to Cloud, DevOps &amp; Full-Stack roles — remote or on-site · San José, Costa Rica
+          Open to Cloud, DevOps &amp; Full-Stack roles — remote or on-site · Heredia, Costa Rica
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 reveal">
