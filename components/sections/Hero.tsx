@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const roles = ["DevOps Engineer", "SRE", "AWS Cloud Engineer", "Full-Stack Developer"];
+const roles = ["Cloud Developer", "DevOps Engineer", "Full-Stack Engineer", "Big Data Master's Candidate"];
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -60,10 +60,7 @@ export default function Hero() {
         >
           <span
             className="w-2 h-2 rounded-full animate-pulse"
-            style={{
-              background: "var(--accent)",
-              boxShadow: "0 0 8px var(--accent)",
-            }}
+            style={{ background: "var(--accent)", boxShadow: "0 0 8px var(--accent)" }}
           />
           Available for new opportunities
         </div>
@@ -92,7 +89,7 @@ export default function Hero() {
             Currently →
           </span>
           <span
-            className="font-mono text-base font-medium transition-all duration-400"
+            className="font-mono text-base font-medium"
             style={{
               color: "var(--accent)",
               opacity: visible ? 1 : 0,
@@ -112,10 +109,10 @@ export default function Hero() {
             animation: "fadeUp 0.7s 0.3s ease both",
           }}
         >
-          Computer Systems Engineer with a strong background in software development
-          and a growing specialization in Cloud and DevOps. Experienced in CI/CD automation,
-          Linux-based environments, Docker, and Kubernetes — currently expanding cloud
-          infrastructure expertise through real-world freelance collaboration.
+          Computer Systems Engineer with real-world experience delivering backend systems,
+          API integrations, and cloud infrastructure for private companies and non-profits
+          in Costa Rica. Currently pursuing a Master's in Visual Analytics and Big Data —
+          deepening expertise in data engineering, machine learning, and distributed computing.
         </p>
 
         {/* CTAs */}
@@ -137,11 +134,7 @@ export default function Hero() {
           <a
             href="#projects"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-sm font-mono text-xs tracking-widest uppercase transition-all duration-200 hover:-translate-y-0.5 border"
-            style={{
-              borderColor: "var(--border)",
-              color: "var(--text-secondary)",
-              background: "transparent",
-            }}
+            style={{ borderColor: "var(--border)", color: "var(--text-secondary)", background: "transparent" }}
             onMouseEnter={e => {
               (e.currentTarget as HTMLElement).style.borderColor = "var(--accent)";
               (e.currentTarget as HTMLElement).style.color = "var(--accent)";
@@ -160,15 +153,25 @@ export default function Hero() {
           className="mt-20 flex flex-wrap gap-x-8 gap-y-2 items-center"
           style={{ animation: "fadeUp 0.7s 0.5s ease both" }}
         >
-          <span className="font-mono text-xs" style={{ color: "var(--text-muted)" }}>
-            CORE STACK
-          </span>
-          {["AWS", "Terraform", "Docker", "Kubernetes", "GitHub Actions", "ASP.NET Core", "Node.js", "Linux"].map((t) => (
+          <span className="font-mono text-xs" style={{ color: "var(--text-muted)" }}>CORE STACK</span>
+          {["AWS", "Docker", "Terraform", "Pulumi", "Kubernetes", "GitHub Actions", "ASP.NET Core", "Node.js", "React", "Linux"].map((t) => (
             <span key={t} className="font-mono text-xs font-medium" style={{ color: "var(--text-muted)" }}>
               {t}
             </span>
           ))}
         </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        style={{ animation: "fadeIn 1s 1s ease both" }}
+      >
+        <span className="font-mono text-xs tracking-widest" style={{ color: "var(--text-muted)" }}>scroll</span>
+        <div
+          className="w-px h-10"
+          style={{ background: "linear-gradient(to bottom, var(--accent), transparent)", animation: "float 2s ease-in-out infinite" }}
+        />
       </div>
     </section>
   );

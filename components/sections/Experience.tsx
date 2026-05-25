@@ -7,35 +7,35 @@ import SkillTag from "@/components/ui/SkillTag";
 const experiences = [
   {
     date: "Jan 2026 — Present",
-    role: "Cloud & Infrastructure Engineer",
-    company: "Freelance · San José, Costa Rica",
+    role: "Cloud Developer",
+    company: "Freelance · Family Project · San José, Costa Rica",
     description:
-      "Assisted in provisioning AWS infrastructure using Terraform — EC2 instances, IAM roles, VPC configurations, and security groups. Containerized applications with Docker and deployed workloads to Kubernetes clusters. Supported CI/CD pipeline implementation via GitHub Actions and managed application servers in Linux-based cloud environments. Gained practical exposure to networking concepts such as subnets, routing tables, and access control policies.",
-    tags: ["AWS", "Terraform", "Docker", "Kubernetes", "GitHub Actions", "Linux"],
+      "Provisioned and configured AWS infrastructure (EC2, IAM, VPC) ensuring secure and scalable cloud environments. Containerized services with Docker, improving consistency across development and production. Built and maintained CI/CD pipelines using GitHub Actions, automating deployment processes. Managed Linux-based servers for system stability, performance monitoring, and issue resolution.",
+    tags: ["AWS", "Docker", "GitHub Actions", "Linux", "CI/CD"],
   },
   {
     date: "Sep 2023 — Aug 2024",
     role: "Web Developer — Customer Support Platform",
     company: "Soporte Completo S.A · San José, Costa Rica",
     description:
-      "Led the architecture, development, and deployment of a production web platform supporting operational business processes. Designed backend systems using ASP.NET Core and SQL Server with emphasis on maintainability and scalability. Established structured CI/CD workflows to improve release consistency and deployment reliability. Collaborated cross-functionally within an Agile framework to translate business requirements into technical solutions.",
-    tags: ["ASP.NET Core", "SQL Server", "CI/CD", "Agile", "REST APIs"],
+      "Developed backend solutions using ASP.NET Core and SQL Server supporting business-critical operations. Translated business requirements into scalable, maintainable technical solutions with a focus on performance. Implemented CI/CD workflows with GitHub Actions, improving deployment speed and reducing operational risk. Collaborated in an Agile team across the full delivery lifecycle, from requirements gathering to production support.",
+    tags: ["ASP.NET Core", "SQL Server", "GitHub Actions", "CI/CD", "Agile"],
   },
   {
     date: "Apr 2024 — Jul 2024",
-    role: "Web Developer — Hospitality Web Portal",
-    company: "Ronald McDonald's House of Charities Costa Rica · San José, Costa Rica",
+    role: "Web Developer — Hospitality Portal",
+    company: "Ronald McDonald House Charities CR · San José, Costa Rica",
     description:
-      "Designed and implemented a centralized digital platform to support internal operations and data management. Structured role-based access control mechanisms for secure information handling. Led data migration into a consolidated SQL Server environment, architecting a secure system that improved internal digital workflow organization.",
-    tags: ["SQL Server", "Role-Based Access Control", "Data Migration", "Full-Stack"],
+      "Independently designed and delivered a centralized web platform to streamline internal operations for a non-profit organization. Implemented role-based access control (RBAC) to ensure secure handling of sensitive data across staff roles. Led migration of existing records into a consolidated SQL Server environment, improving data consistency and accessibility.",
+    tags: ["SQL Server", "RBAC", "Data Migration", "Full-Stack"],
   },
   {
     date: "Jan 2024 — Apr 2024",
     role: "Web Developer — E-Commerce Integration",
-    company: "Freelance · San José, Costa Rica",
+    company: "Freelance · Private Client · San José, Costa Rica",
     description:
-      "Developed secure web applications and integrated third-party APIs for transactional workflows. Designed structured database schemas and implemented testing practices to ensure production reliability. Managed full lifecycle delivery from requirement analysis to deployment and support.",
-    tags: ["REST APIs", "Node.js", "JavaScript", "MySQL", "Backend"],
+      "Developed an invoicing module using Node.js integrated with the Costa Rica Ministry of Finance API. Automated digital receipt delivery, improving the end-customer checkout experience. Performed functional testing with Selenium ensuring reliability and compliance before production handoff.",
+    tags: ["Node.js", "REST APIs", "Selenium", "Ministry of Finance API", "Testing"],
   },
 ];
 
@@ -65,9 +65,7 @@ export default function Experience() {
           {/* Vertical line */}
           <div
             className="absolute left-0 top-0 bottom-0 w-px"
-            style={{
-              background: "linear-gradient(to bottom, var(--accent), var(--border), transparent)",
-            }}
+            style={{ background: "linear-gradient(to bottom, var(--accent), var(--border), transparent)" }}
           />
 
           <div className="flex flex-col gap-0">
@@ -80,34 +78,19 @@ export default function Experience() {
                 {/* Dot */}
                 <div
                   className="absolute left-[-4.5px] top-1.5 w-2.5 h-2.5 rounded-full"
-                  style={{
-                    background: "var(--accent)",
-                    boxShadow: "0 0 10px var(--accent)",
-                  }}
+                  style={{ background: "var(--accent)", boxShadow: "0 0 10px var(--accent)" }}
                 />
 
-                <p
-                  className="font-mono text-xs tracking-widest uppercase mb-2"
-                  style={{ color: "var(--accent)" }}
-                >
+                <p className="font-mono text-xs tracking-widest uppercase mb-2" style={{ color: "var(--accent)" }}>
                   {exp.date}
                 </p>
-                <h3
-                  className="font-display font-bold text-xl mb-1"
-                  style={{ color: "var(--text-primary)" }}
-                >
+                <h3 className="font-display font-bold text-xl mb-1" style={{ color: "var(--text-primary)" }}>
                   {exp.role}
                 </h3>
-                <p
-                  className="font-mono text-xs tracking-wide mb-4 uppercase"
-                  style={{ color: "var(--accent-muted)" }}
-                >
+                <p className="font-mono text-xs tracking-wide mb-4 uppercase" style={{ color: "var(--accent-muted)" }}>
                   {exp.company}
                 </p>
-                <p
-                  className="text-sm leading-relaxed max-w-2xl mb-5"
-                  style={{ color: "var(--text-secondary)" }}
-                >
+                <p className="text-sm leading-relaxed max-w-2xl mb-5" style={{ color: "var(--text-secondary)" }}>
                   {exp.description}
                 </p>
                 <div className="flex flex-wrap gap-2">

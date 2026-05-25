@@ -1,19 +1,16 @@
 const stats = [
-  { value: "4",    label: "Years Engineering"    },
-  { value: "4",    label: "Production Projects"  },
-  { value: "AWS",  label: "Cloud Focus"          },
-  { value: "IaC",  label: "Terraform"            },
-  { value: "K8s",  label: "Kubernetes"           },
+  { value: "4",     label: "Years Engineering"   },
+  { value: "4",     label: "Production Projects"  },
+  { value: "AWS",   label: "Cloud Focus"          },
+  { value: "M.Sc.", label: "Big Data & Analytics" },
+  { value: "IaC",   label: "Terraform · Pulumi"   },
 ];
 
 export default function Stats() {
   return (
     <div
       className="border-y"
-      style={{
-        background: "var(--bg-subtle)",
-        borderColor: "var(--border)",
-      }}
+      style={{ background: "var(--bg-subtle)", borderColor: "var(--border)" }}
     >
       <div className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
         {stats.map((s, i) => (

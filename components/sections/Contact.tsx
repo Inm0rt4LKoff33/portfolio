@@ -4,10 +4,10 @@ import { Mail, Linkedin, Github, FileDown } from "lucide-react";
 import { useReveal } from "@/components/ui/useReveal";
 
 const links = [
-  { icon: Mail,     label: "Email Me",     href: "mailto:fabimv23@protonmail.com"       },
-  { icon: Linkedin, label: "LinkedIn",     href: "https://linkedin.com/in/yourprofile"  },
-  { icon: Github,   label: "GitHub",       href: "https://github.com/yourusername"      },
-  { icon: FileDown, label: "Download CV",  href: "/resume.pdf"                          },
+  { icon: Mail,     label: "Email Me",    href: "mailto:fabimv23@protonmail.com"              },
+  { icon: Linkedin, label: "LinkedIn",    href: "https://linkedin.com/in/yourprofile"          },
+  { icon: Github,   label: "GitHub",      href: "https://github.com/Inm0rt4LKoff33"           },
+  { icon: FileDown, label: "Download CV", href: "/resume.pdf"                                  },
 ];
 
 export default function Contact() {
@@ -22,9 +22,7 @@ export default function Contact() {
       {/* Background glow */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{
-          background: "radial-gradient(ellipse 60% 50% at 50% 100%, var(--accent-glow), transparent)",
-        }}
+        style={{ background: "radial-gradient(ellipse 60% 50% at 50% 100%, var(--accent-glow), transparent)" }}
       />
 
       <div className="max-w-3xl mx-auto text-center relative z-10" ref={ref}>
@@ -45,7 +43,7 @@ export default function Contact() {
           className="font-mono text-sm tracking-wide mb-14 reveal"
           style={{ color: "var(--text-muted)" }}
         >
-          Open to DevOps, SRE &amp; Cloud Engineer roles — remote or on-site
+          Open to Cloud, DevOps &amp; Full-Stack roles — remote or on-site · San José, Costa Rica
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 reveal">
@@ -56,11 +54,7 @@ export default function Contact() {
               target={l.href.startsWith("http") ? "_blank" : undefined}
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm font-mono text-xs tracking-widest uppercase border transition-all duration-200 hover:-translate-y-0.5"
-              style={{
-                borderColor: "var(--border)",
-                color: "var(--text-secondary)",
-                background: "var(--card)",
-              }}
+              style={{ borderColor: "var(--border)", color: "var(--text-secondary)", background: "var(--card)" }}
               onMouseEnter={e => {
                 (e.currentTarget as HTMLElement).style.borderColor = "var(--accent)";
                 (e.currentTarget as HTMLElement).style.color = "var(--accent)";
@@ -70,7 +64,7 @@ export default function Contact() {
                 (e.currentTarget as HTMLElement).style.color = "var(--text-secondary)";
               }}
             >
-            <l.icon size={15} />
+              <l.icon size={15} />
               {l.label}
             </a>
           ))}

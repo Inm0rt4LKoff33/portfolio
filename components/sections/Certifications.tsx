@@ -1,6 +1,6 @@
 "use client";
 
-import { GraduationCap, Award, Container, Layers } from "lucide-react";
+import { GraduationCap, Award, Container, BarChart3 } from "lucide-react";
 import { useReveal } from "@/components/ui/useReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 
@@ -15,28 +15,28 @@ const certs: {
 }[] = [
   {
     icon: GraduationCap,
+    name: "M.Sc. Visual Analytics & Big Data",
+    issuer: "UNIR — Universidad Internacional de La Rioja · 2026–Present",
+    status: "in-progress",
+    label: "In Progress",
+  },
+  {
+    icon: GraduationCap,
     name: "B.Sc. Computer Systems Engineering",
-    issuer: "Fidelitas University · 2020 – 2024",
+    issuer: "Universidad Fidelitas · 2020–2024",
     status: "completed",
     label: "Graduated",
   },
   {
     icon: Award,
-    name: "Data Science",
-    issuer: "Smart Data · Oct 2024 – Jan 2025",
+    name: "Data Science Certificate",
+    issuer: "Smart Data · Oct 2024–Jan 2025",
     status: "completed",
     label: "Completed",
   },
   {
     icon: Container,
-    name: "Containers & Kubernetes",
-    issuer: "Docker · Kubernetes · Hands-on",
-    status: "in-progress",
-    label: "In Progress",
-  },
-  {
-    icon: Layers,
-    name: "AWS Cloud Practitioner",
+    name: "AWS Certified Cloud Practitioner",
     issuer: "Amazon Web Services",
     status: "target",
     label: "Target",
@@ -44,9 +44,9 @@ const certs: {
 ];
 
 const statusStyle: Record<CertStatus, { bg: string; color: string }> = {
-  completed:    { bg: "var(--accent-glow)",          color: "var(--accent)"     },
-  "in-progress":{ bg: "rgba(234,179,8,0.08)",        color: "#ca8a04"           },
-  target:       { bg: "rgba(148,163,184,0.08)",      color: "var(--text-muted)" },
+  completed:    { bg: "var(--accent-glow)",     color: "var(--accent)"     },
+  "in-progress":{ bg: "rgba(234,179,8,0.08)",   color: "#ca8a04"           },
+  target:       { bg: "rgba(148,163,184,0.08)", color: "var(--text-muted)" },
 };
 
 export default function Certifications() {
@@ -68,7 +68,7 @@ export default function Certifications() {
             color: "var(--text-primary)",
           }}
         >
-          Certifications
+          Education &amp; Certifications
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -91,20 +91,14 @@ export default function Certifications() {
                 >
                   {cert.name}
                 </h3>
-                <p
-                  className="font-mono text-xs tracking-wide"
-                  style={{ color: "var(--accent-muted)" }}
-                >
+                <p className="font-mono text-xs tracking-wide" style={{ color: "var(--accent-muted)" }}>
                   {cert.issuer}
                 </p>
               </div>
               <div className="mt-auto">
                 <span
                   className="font-mono text-xs px-2.5 py-1 rounded-sm"
-                  style={{
-                    background: statusStyle[cert.status].bg,
-                    color: statusStyle[cert.status].color,
-                  }}
+                  style={{ background: statusStyle[cert.status].bg, color: statusStyle[cert.status].color }}
                 >
                   {cert.label}
                 </span>
