@@ -26,13 +26,13 @@ const en = {
     lastName: "Madriz",
     current: "Currently →",
     roles: [
-      "Data Intern at ISTS",
+      "Intern at ISTS · Academic data observatory",
       "M.Sc. Student, Visual Analytics & Big Data",
       "Building ETL pipelines in Python",
       "SQL & cloud foundations",
     ],
     description:
-      "Computer Systems Engineer (Universidad Fidélitas, 2025) and M.Sc. student in Visual Analytics and Big Data at UNIR. I build pipelines that turn messy spreadsheets into clean, documented, analysis-ready data — currently an academic data observatory for ISTS with Python, data-quality rules and a star-schema model for Power BI. Background in SQL Server database design, backend development and AWS fundamentals.",
+      "Computer Systems Engineer (Universidad Fidélitas, 2025) and M.Sc. student in Visual Analytics and Big Data at UNIR. I build pipelines that turn messy spreadsheets into clean, documented, analysis-ready data — currently, as an intern at Instituto Superior Tecnológico Sudamericano (ISTS), an academic data observatory built with Python, data-quality rules and a star-schema model for a Power BI dashboard. Background in SQL Server database design, backend development and AWS fundamentals.",
     ctaContact: "Get in touch ↗",
     ctaProjects: "View projects →",
     coreStack: "CORE STACK",
@@ -108,11 +108,11 @@ const en = {
     heading: "Experience",
     items: [
       {
-        date: "2026 — Present",
-        role: "Data Intern — Academic Data Observatory",
-        company: "ISTS · Ecuador",
+        date: "Sep 2026 — Present",
+        role: "Intern — Academic Data Observatory",
+        company: "Instituto Superior Tecnológico Sudamericano (ISTS) · Ecuador",
         description:
-          "Building the data pipeline behind the institute's academic dashboard. It takes the enrollment, withdrawal and graduation reports in Excel, validates each file against a data contract, normalizes text, dates and periods, pseudonymizes national IDs with a salted SHA-256 hash and drops personal data. Doubtful values are logged in a data-quality report instead of being fixed silently, and the curated layer is rebuilt as a star schema for Power BI on every run. Covered by 17 automated tests and documented for handover.",
+          "Working from a set of requirements to build the institute's academic dashboard and the data pipeline behind it. The pipeline takes the enrollment, withdrawal and graduation reports in Excel, validates each file against a data contract, normalizes text, dates and periods, pseudonymizes national IDs with a salted SHA-256 hash and drops personal data. Doubtful values are logged in a data-quality report instead of being fixed silently, and the curated layer is rebuilt as a star schema for Power BI on every run. Covered by 17 automated tests and documented for handover.",
         tags: ["Python", "Pandas", "ETL", "Data quality", "Star schema", "pytest"],
       },
       {
@@ -256,13 +256,13 @@ const es: Site = {
     lastName: "Madriz",
     current: "Actualmente →",
     roles: [
-      "Pasante de datos en el ISTS",
+      "Pasante en el ISTS · Observatorio de datos académicos",
       "Estudiante de Máster en Visual Analytics y Big Data",
       "Construyendo pipelines ETL en Python",
       "Bases en SQL y en la nube",
     ],
     description:
-      "Ingeniero en Sistemas de Computación (Universidad Fidélitas, 2025) y estudiante del Máster en Visual Analytics and Big Data en UNIR. Construyo pipelines que convierten hojas de cálculo desordenadas en datos limpios, documentados y listos para analizar; hoy, un observatorio de datos académicos para el ISTS con Python, reglas de calidad de datos y un modelo estrella para Power BI. Tengo bases en diseño de bases de datos en SQL Server, desarrollo backend y AWS.",
+      "Ingeniero en Sistemas de Computación (Universidad Fidélitas, 2025) y estudiante del Máster en Visual Analytics and Big Data en UNIR. Construyo pipelines que convierten hojas de cálculo desordenadas en datos limpios, documentados y listos para analizar; hoy, como pasante del Instituto Superior Tecnológico Sudamericano (ISTS), un observatorio de datos académicos con Python, reglas de calidad de datos y un modelo estrella para un dashboard en Power BI. Tengo bases en diseño de bases de datos en SQL Server, desarrollo backend y AWS.",
     ctaContact: "Contáctame ↗",
     ctaProjects: "Ver proyectos →",
     coreStack: "STACK PRINCIPAL",
@@ -338,11 +338,11 @@ const es: Site = {
     heading: "Experiencia",
     items: [
       {
-        date: "2026 — Actualidad",
-        role: "Pasante de datos — Observatorio de Datos Académicos",
-        company: "ISTS · Ecuador",
+        date: "Sep 2026 — Actualidad",
+        role: "Pasante — Observatorio de Datos Académicos",
+        company: "Instituto Superior Tecnológico Sudamericano (ISTS) · Ecuador",
         description:
-          "Construyo el pipeline de datos detrás del dashboard académico del instituto. Toma los reportes de matrículas, retiros y titulación en Excel, valida cada archivo contra un contrato de datos, normaliza textos, fechas y periodos, seudonimiza las cédulas con un hash SHA-256 con sal y descarta los datos personales. Los valores dudosos quedan en un reporte de calidad en lugar de corregirse en silencio, y la capa final se reconstruye como modelo estrella para Power BI en cada ejecución. Tiene 17 pruebas automáticas y documentación para la entrega.",
+          "Trabajo a partir de una serie de requerimientos para armar el dashboard académico del instituto y el pipeline de datos que lo alimenta. El pipeline toma los reportes de matrículas, retiros y titulación en Excel, valida cada archivo contra un contrato de datos, normaliza textos, fechas y periodos, seudonimiza las cédulas con un hash SHA-256 con sal y descarta los datos personales. Los valores dudosos quedan en un reporte de calidad en lugar de corregirse en silencio, y la capa final se reconstruye como modelo estrella para Power BI en cada ejecución. Tiene 17 pruebas automáticas y documentación para la entrega.",
         tags: ["Python", "Pandas", "ETL", "Calidad de datos", "Modelo estrella", "pytest"],
       },
       {
