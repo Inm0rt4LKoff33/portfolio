@@ -4,77 +4,16 @@ import { ArrowUpRight, Lock } from "lucide-react";
 import { useReveal } from "@/components/ui/useReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SkillTag from "@/components/ui/SkillTag";
-
-const projects = [
-  {
-    num: "01",
-    name: "Academic Data Observatory",
-    kind: "Internship · ISTS · In progress",
-    description:
-      "ETL pipeline that turns an institute's Excel reports into a clean, anonymized star-schema dataset for Power BI. Raw files stay untouched, each file is checked against a data contract, quality issues go to a report, and reruns never duplicate data.",
-    tags: ["Python", "Pandas", "ETL", "Data Quality", "Star Schema", "pytest"],
-    accent: "var(--accent)",
-    link: "https://github.com/Inm0rt4LKoff33/ists-dashboard",
-  },
-  {
-    num: "02",
-    name: "Job Search Automation Agent",
-    kind: "Personal project · AI-assisted",
-    description:
-      "Python program that collects job postings daily from several APIs, unifies them into one schema, keeps the history in SQLite to skip duplicates, and uses the Claude API to score each posting against my profile. Built with Claude as an AI coding assistant.",
-    tags: ["Python", "REST APIs", "SQLite", "Claude API", "Automation"],
-    accent: "var(--accent-light)",
-    link: "#",
-  },
-  {
-    num: "03",
-    name: "AIOps Kubernetes Platform",
-    kind: "M.Sc. thesis · Early stage",
-    description:
-      "Thesis project to detect and explain incidents in Kubernetes with a knowledge graph. So far: a local kind cluster running Google's Online Boutique demo with generated traffic. Next: chaos-engineering faults, a PySpark pipeline, a Neo4j graph and an MCP server.",
-    tags: ["Kubernetes", "Neo4j", "PySpark", "MCP", "Observability"],
-    accent: "var(--accent)",
-    link: "https://github.com/Inm0rt4LKoff33/aiops-k8s-platform",
-  },
-  {
-    num: "04",
-    name: "Madrid Lodging EDA",
-    kind: "Data analysis project",
-    description:
-      "Exploratory analysis of a Madrid lodging dataset: data cleaning and a heatmap to study how comfort and location ratings relate to each other.",
-    tags: ["Python", "EDA", "Data Cleaning", "Visualization"],
-    accent: "var(--accent-light)",
-    link: "#",
-  },
-  {
-    num: "05",
-    name: "IT Infrastructure Management Platform",
-    kind: "Graduation project · Team of 3",
-    description:
-      "Web platform to replace the Excel sheets a company used to track its IT infrastructure (IPs, networks, credentials, users and devices). I designed the relational database and built backend modules, unit tests and email notifications, and deployed the demo on Azure.",
-    tags: ["Laravel", "SQL Server", "Database Design", "Azure"],
-    accent: "var(--accent)",
-    link: "#",
-  },
-  {
-    num: "06",
-    name: "Guest Portal for a Non-Profit",
-    kind: "Community project · Ronald McDonald House Charities CR",
-    description:
-      "Web portal to capture guest information that the organization kept on paper. I gathered requirements directly with the client and migrated the existing records into SQL Server.",
-    tags: [".NET 8", "SQL Server", "Data Migration", "Requirements"],
-    accent: "var(--accent-light)",
-    link: "#",
-  },
-];
+import { useLang } from "@/components/ui/LangProvider";
 
 export default function Projects() {
+  const pr = useLang().t.projects;
   const ref = useReveal();
 
   return (
     <section id="projects" className="py-28 px-6" style={{ background: "var(--bg)" }}>
       <div className="max-w-6xl mx-auto" ref={ref}>
-        <SectionLabel>What I&apos;ve built</SectionLabel>
+        <SectionLabel>{pr.label}</SectionLabel>
         <h2
           className="font-display font-black tracking-tight mb-14"
           style={{
@@ -83,11 +22,13 @@ export default function Projects() {
             color: "var(--text-primary)",
           }}
         >
-          Featured Projects
+          {pr.heading}
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {projects.map((p, i) => {
+          {pr.items.map((p, i) => {
+            const num = String(i + 1).padStart(2, "0");
+            const accent = i % 2 ? "var(--accent-light)" : "var(--accent)";
             const isLive = p.link !== "#";
             const Wrapper = isLive ? "a" : "div";
             const wrapperProps = isLive
@@ -108,12 +49,12 @@ export default function Projects() {
                 {/* Top accent */}
                 <div
                   className="absolute top-0 left-0 right-0 h-[3px]"
-                  style={{ background: `linear-gradient(90deg, ${p.accent}, transparent)` }}
+                  style={{ background: `linear-gradient(90deg, ${accent}, transparent)` }}
                 />
 
                 <div className="flex items-start justify-between mb-5">
                   <span className="font-mono text-xs tracking-widest" style={{ color: "var(--text-muted)" }}>
-                    PROJECT / {p.num}
+                    {pr.project} / {num}
                   </span>
                   {isLive ? (
                     <ArrowUpRight
@@ -126,7 +67,7 @@ export default function Projects() {
                       className="inline-flex items-center gap-1 font-mono text-xs px-2 py-1 rounded-sm"
                       style={{ background: "rgba(148,163,184,0.08)", color: "var(--text-muted)" }}
                     >
-                      <Lock size={10} /> No public repo
+                      <Lock size={10} /> {pr.noRepo}
                     </span>
                   )}
                 </div>

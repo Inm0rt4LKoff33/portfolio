@@ -7,9 +7,11 @@ import Projects from "@/components/sections/Projects";
 import Certifications from "@/components/sections/Certifications";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
+import { LangProvider } from "@/components/ui/LangProvider";
 
 export default function Home() {
   return (
+    <LangProvider>
     <main>
       <Navbar />
       <Hero />
@@ -21,5 +23,6 @@ export default function Home() {
       <Contact />
       <Footer />
     </main>
+    </LangProvider>
   );
 }

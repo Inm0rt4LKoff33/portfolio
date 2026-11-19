@@ -3,16 +3,18 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "@/components/ui/ThemeToggle";
-
-const links = [
-  { href: "#skills",      label: "Skills"          },
-  { href: "#experience",  label: "Experience"      },
-  { href: "#projects",    label: "Projects"        },
-  { href: "#certs",       label: "Certifications"  },
-  { href: "#contact",     label: "Contact"         },
-];
+import LangToggle from "@/components/ui/LangToggle";
+import { useLang } from "@/components/ui/LangProvider";
 
 export default function Navbar() {
+  const { t } = useLang();
+  const links = [
+    { href: "#skills",     label: t.nav.skills     },
+    { href: "#experience", label: t.nav.experience },
+    { href: "#projects",   label: t.nav.projects   },
+    { href: "#certs",      label: t.nav.certs      },
+    { href: "#contact",    label: t.nav.contact    },
+  ];
   const [active, setActive]     = useState("");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -65,11 +67,12 @@ export default function Navbar() {
         </ul>
 
         <div className="flex items-center gap-3">
+          <LangToggle />
           <ThemeToggle />
           <button
             className="md:hidden p-1 transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-label={menuOpen ? t.nav.closeMenu : t.nav.openMenu}
             style={{ color: "var(--text-secondary)" }}
           >
             {menuOpen ? <X size={20} /> : <Menu size={20} />}

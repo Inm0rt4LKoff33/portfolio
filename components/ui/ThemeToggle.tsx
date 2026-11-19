@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
+import { useLang } from "@/components/ui/LangProvider";
 
 export default function ThemeToggle() {
+  const { t } = useLang();
   const [isDark, setIsDark] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -24,7 +26,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggle}
-      aria-label="Toggle theme"
+      aria-label={t.nav.theme}
       className="w-9 h-9 rounded-md flex items-center justify-center transition-all duration-200 border hover:scale-105 active:scale-95"
       style={{
         borderColor: "var(--border)",

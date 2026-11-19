@@ -4,81 +4,26 @@ import { Cloud, Workflow, Database, BarChart3, Wrench, Cpu, Sparkles, BookOpen }
 import { useReveal } from "@/components/ui/useReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SkillTag from "@/components/ui/SkillTag";
+import { useLang } from "@/components/ui/LangProvider";
+import type { Level } from "@/content/site";
 
-type Level = "Applied" | "Learning" | "Coursework";
-
-const skills: { icon: React.ElementType; title: string; description: string; tags: string[]; level: Level }[] = [
-  {
-    icon: Workflow,
-    title: "Data Engineering & ETL",
-    description: "Pipelines that extract institutional Excel reports, validate them against a data contract, clean and pseudonymize them, and rebuild an analysis-ready layer on every run.",
-    tags: ["Python", "Pandas", "ETL", "Parquet", "Data contracts", "Data quality", "pytest"],
-    level: "Applied",
-  },
-  {
-    icon: Database,
-    title: "Databases & Modeling",
-    description: "Relational design and normalization in SQL Server, record migration into a new database, and star-schema models (facts and dimensions) for reporting.",
-    tags: ["SQL Server", "SQLite", "Star schema", "Normalization", "Data migration"],
-    level: "Applied",
-  },
-  {
-    icon: BarChart3,
-    title: "Analysis & Visualization",
-    description: "Exploratory data analysis in notebooks and reports that explain each chart and its conclusions.",
-    tags: ["Jupyter", "EDA", "Matplotlib", "Seaborn"],
-    level: "Applied",
-  },
-  {
-    icon: Cloud,
-    title: "Cloud & DevOps",
-    description: "AWS networking and access configured for a client, a demo deployed on Azure, and containers with CI/CD in a personal project. Linux is my daily operating system.",
-    tags: ["AWS (EC2, IAM, VPC, S3)", "Azure", "Docker", "GitHub Actions", "Git", "Linux"],
-    level: "Applied",
-  },
-  {
-    icon: Wrench,
-    title: "Backend & APIs",
-    description: "Web backends and API integrations built in university, community and freelance projects.",
-    tags: ["C# / ASP.NET Core / .NET 8", "Node.js / Express", "PHP / Laravel", "REST APIs", "Claude API"],
-    level: "Applied",
-  },
-  {
-    icon: Cpu,
-    title: "Big Data",
-    description: "Distributed processing studied in my master's, with Spark assignments run on Google Cloud.",
-    tags: ["Apache Spark", "PySpark", "HDFS", "Google Cloud"],
-    level: "Learning",
-  },
-  {
-    icon: Sparkles,
-    title: "AI & Platforms",
-    description: "Model Context Protocol servers in Python and a local Kubernetes lab for my master's thesis.",
-    tags: ["MCP", "Kubernetes (kind)", "Neo4j", "Machine learning fundamentals"],
-    level: "Learning",
-  },
-  {
-    icon: BookOpen,
-    title: "Coursework",
-    description: "Tools I studied at university or in my master's but have not yet used in a project of my own.",
-    tags: ["Power BI", "MySQL", "MongoDB", "Terraform", "Java", "Vue.js", "GitLab CI/CD", "Selenium"],
-    level: "Coursework",
-  },
-];
+const icons = [Workflow, Database, BarChart3, Cloud, Wrench, Cpu, Sparkles, BookOpen];
 
 const levelStyle: Record<Level, { bg: string; color: string }> = {
-  Applied:    { bg: "var(--accent-glow)",     color: "var(--accent)"     },
-  Learning:   { bg: "rgba(234,179,8,0.08)",   color: "#ca8a04"           },
-  Coursework: { bg: "rgba(148,163,184,0.08)", color: "var(--text-muted)" },
+  applied:    { bg: "var(--accent-glow)",     color: "var(--accent)"     },
+  learning:   { bg: "rgba(234,179,8,0.08)",   color: "#ca8a04"           },
+  coursework: { bg: "rgba(148,163,184,0.08)", color: "var(--text-muted)" },
 };
 
 export default function Skills() {
+  const { t } = useLang();
+  const s = t.skills;
   const ref = useReveal();
 
   return (
     <section id="skills" className="py-28 px-6" style={{ background: "var(--bg)" }}>
       <div className="max-w-6xl mx-auto" ref={ref}>
-        <SectionLabel>What I bring</SectionLabel>
+        <SectionLabel>{s.label}</SectionLabel>
         <h2
           className="font-display font-black tracking-tight mb-14"
           style={{
@@ -87,14 +32,15 @@ export default function Skills() {
             color: "var(--text-primary)",
           }}
         >
-          Skills &amp; Technologies
+          {s.heading}
         </h2>
 
         <div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px"
           style={{ background: "var(--border)" }}
         >
-          {skills.map((skill, i) => (
+          {s.items.map((skill, i) => (
+
             <div
               key={i}
               className="reveal p-8 transition-all duration-200 group"
@@ -113,13 +59,13 @@ export default function Skills() {
                   className="p-2 rounded-md"
                   style={{ background: "var(--accent-glow)", color: "var(--accent)" }}
                 >
-                  <skill.icon size={20} />
+                  {(() => { const Icon = icons[i]; return <Icon size={20} />; })()}
                 </div>
                 <span
                   className="font-mono text-xs px-2.5 py-1 rounded-sm"
                   style={{ background: levelStyle[skill.level].bg, color: levelStyle[skill.level].color }}
                 >
-                  {skill.level}
+                  {s.levels[skill.level]}
                 </span>
               </div>
 

@@ -3,35 +3,10 @@
 import { useReveal } from "@/components/ui/useReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SkillTag from "@/components/ui/SkillTag";
-
-const experiences = [
-  {
-    date: "2026 — Present",
-    role: "Data Intern — Academic Data Observatory",
-    company: "ISTS · Ecuador",
-    description:
-      "Building the data pipeline behind the institute's academic dashboard. It takes the enrollment, withdrawal and graduation reports in Excel, validates each file against a data contract, normalizes text, dates and periods, pseudonymizes national IDs with a salted SHA-256 hash and drops personal data. Doubtful values are logged in a data-quality report instead of being fixed silently, and the curated layer is rebuilt as a star schema for Power BI on every run. Covered by 17 automated tests and documented for handover.",
-    tags: ["Python", "Pandas", "ETL", "Data Quality", "Star Schema", "pytest"],
-  },
-  {
-    date: "2025 · 2 months",
-    role: "Cloud Support (Freelance)",
-    company: "Client project · Costa Rica",
-    description:
-      "Configured EC2 instances, IAM access and the VPC network of a client's AWS environment.",
-    tags: ["AWS", "EC2", "IAM", "VPC"],
-  },
-  {
-    date: "Jan 2024 — Apr 2024",
-    role: "Freelance Developer — E-Invoicing Integration",
-    company: "Online store · San José, Costa Rica",
-    description:
-      "Integrated an online store's checkout with the Costa Rica Ministry of Finance electronic-invoicing API. Built the module that authenticates with the ministry, captures each transaction's data after purchase and emails the electronic receipt to the customer.",
-    tags: ["Node.js", "Express", "REST APIs"],
-  },
-];
+import { useLang } from "@/components/ui/LangProvider";
 
 export default function Experience() {
+  const x = useLang().t.experience;
   const ref = useReveal();
 
   return (
@@ -41,7 +16,7 @@ export default function Experience() {
       style={{ background: "var(--bg-subtle)" }}
     >
       <div className="max-w-6xl mx-auto" ref={ref}>
-        <SectionLabel>Where I&apos;ve been</SectionLabel>
+        <SectionLabel>{x.label}</SectionLabel>
         <h2
           className="font-display font-black tracking-tight mb-16"
           style={{
@@ -50,7 +25,7 @@ export default function Experience() {
             color: "var(--text-primary)",
           }}
         >
-          Experience
+          {x.heading}
         </h2>
 
         <div className="relative">
@@ -61,7 +36,7 @@ export default function Experience() {
           />
 
           <div className="flex flex-col gap-0">
-            {experiences.map((exp, i) => (
+            {x.items.map((exp, i) => (
               <div
                 key={i}
                 className="reveal pl-10 pb-14 relative"

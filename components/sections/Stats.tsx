@@ -1,12 +1,9 @@
-const stats = [
-  { value: "B.Sc.", label: "Systems Eng. · 2025"     },
-  { value: "M.Sc.", label: "Big Data · In progress"  },
-  { value: "ETL",   label: "Python pipelines"        },
-  { value: "SQL",   label: "Database design"         },
-  { value: "AWS",   label: "Cloud foundations"       },
-];
+"use client";
+
+import { useLang } from "@/components/ui/LangProvider";
 
 export default function Stats() {
+  const stats = useLang().t.stats;
   return (
     <div
       className="border-y"

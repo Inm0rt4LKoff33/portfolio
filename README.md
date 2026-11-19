@@ -41,4 +41,15 @@ portfolio/
 
 ---
 
+## 🌐 Idiomas (EN / ES)
+
+Todo el texto del sitio está en `content/site.ts`, con una versión en inglés (`en`) y otra en español (`es`).
+Para cambiar un texto, un proyecto o una experiencia, edítalo ahí **en los dos idiomas**; las secciones solo lo leen.
+TypeScript avisa si a la versión en español le falta algún campo de la inglesa.
+
+El botón EN / ES de la barra de navegación cambia el idioma y lo recuerda en el navegador.
+La primera visita se abre en español si el navegador está en español.
+
+---
+
 For my future me, you'll thank me.

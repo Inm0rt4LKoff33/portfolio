@@ -1,4 +1,9 @@
+"use client";
+
+import { useLang } from "@/components/ui/LangProvider";
+
 export default function Footer() {
+  const f = useLang().t.footer;
   return (
     <footer
       className="border-t py-8 px-6"
@@ -8,10 +13,10 @@ export default function Footer() {
         <p className="font-mono text-xs tracking-wider" style={{ color: "var(--text-muted)" }}>
           Fabian Madriz{" "}
           <span style={{ color: "var(--accent)" }}>●</span>{" "}
-          Computer Systems Engineer
+          {f.role}
         </p>
         <p className="font-mono text-xs" style={{ color: "var(--text-muted)" }}>
-          Built with Next.js · Tailwind CSS
+          {f.built}
         </p>
       </div>
     </footer>

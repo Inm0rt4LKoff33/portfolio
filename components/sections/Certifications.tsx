@@ -1,47 +1,12 @@
 "use client";
 
-import { GraduationCap, Award, Container, BarChart3 } from "lucide-react";
+import { GraduationCap, Award, Container } from "lucide-react";
 import { useReveal } from "@/components/ui/useReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
+import { useLang } from "@/components/ui/LangProvider";
+import type { CertStatus } from "@/content/site";
 
-type CertStatus = "completed" | "in-progress" | "target";
-
-const certs: {
-  icon: React.ElementType;
-  name: string;
-  issuer: string;
-  status: CertStatus;
-  label: string;
-}[] = [
-  {
-    icon: GraduationCap,
-    name: "M.Sc. Visual Analytics & Big Data",
-    issuer: "UNIR — Universidad Internacional de La Rioja · 2026–Present",
-    status: "in-progress",
-    label: "In Progress",
-  },
-  {
-    icon: GraduationCap,
-    name: "B.Sc. Computer Systems Engineering",
-    issuer: "Universidad Fidélitas · 2020–2025",
-    status: "completed",
-    label: "Graduated",
-  },
-  {
-    icon: Award,
-    name: "Data Science Certificate",
-    issuer: "Smart Data · Oct 2024–Jan 2025",
-    status: "completed",
-    label: "Completed",
-  },
-  {
-    icon: Container,
-    name: "AWS Certified Cloud Practitioner",
-    issuer: "Amazon Web Services",
-    status: "target",
-    label: "Target",
-  },
-];
+const icons = [GraduationCap, GraduationCap, Award, Container];
 
 const statusStyle: Record<CertStatus, { bg: string; color: string }> = {
   completed:    { bg: "var(--accent-glow)",     color: "var(--accent)"     },
@@ -50,6 +15,7 @@ const statusStyle: Record<CertStatus, { bg: string; color: string }> = {
 };
 
 export default function Certifications() {
+  const c = useLang().t.certs;
   const ref = useReveal();
 
   return (
@@ -59,7 +25,7 @@ export default function Certifications() {
       style={{ background: "var(--bg-subtle)" }}
     >
       <div className="max-w-6xl mx-auto" ref={ref}>
-        <SectionLabel>Credentials</SectionLabel>
+        <SectionLabel>{c.label}</SectionLabel>
         <h2
           className="font-display font-black tracking-tight mb-14"
           style={{
@@ -68,11 +34,13 @@ export default function Certifications() {
             color: "var(--text-primary)",
           }}
         >
-          Education &amp; Certifications
+          {c.heading}
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {certs.map((cert, i) => (
+          {c.items.map((cert, i) => {
+            const Icon = icons[i];
+            return (
             <div
               key={i}
               className="card reveal p-6 flex flex-col gap-4"
@@ -82,7 +50,7 @@ export default function Certifications() {
                 className="w-10 h-10 rounded-md flex items-center justify-center"
                 style={{ background: "var(--accent-glow)", color: "var(--accent)" }}
               >
-                <cert.icon size={20} />
+                <Icon size={20} />
               </div>
               <div>
                 <h3
@@ -104,7 +72,7 @@ export default function Certifications() {
                 </span>
               </div>
             </div>
-          ))}
+          );})}
         </div>
       </div>
     </section>

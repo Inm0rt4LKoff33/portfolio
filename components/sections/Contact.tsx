@@ -2,14 +2,15 @@
 
 import { Mail, Linkedin, Github } from "lucide-react";
 import { useReveal } from "@/components/ui/useReveal";
-
-const links = [
-  { icon: Mail,     label: "Email Me",    href: "mailto:fabimv23@protonmail.com"              },
-  { icon: Linkedin, label: "LinkedIn",    href: "https://linkedin.com/in/fabianmadrizcr"      },
-  { icon: Github,   label: "GitHub",      href: "https://github.com/Inm0rt4LKoff33"           }
-];
+import { useLang } from "@/components/ui/LangProvider";
 
 export default function Contact() {
+  const k = useLang().t.contact;
+  const links = [
+    { icon: Mail,     label: k.email,    href: "mailto:fabimv23@protonmail.com"         },
+    { icon: Linkedin, label: k.linkedin, href: "https://linkedin.com/in/fabianmadrizcr" },
+    { icon: Github,   label: k.github,   href: "https://github.com/Inm0rt4LKoff33"      },
+  ];
   const ref = useReveal();
 
   return (
@@ -25,7 +26,7 @@ export default function Contact() {
       />
 
       <div className="max-w-3xl mx-auto text-center relative z-10" ref={ref}>
-        <p className="section-label text-center mb-4 reveal">// Let&apos;s connect</p>
+        <p className="section-label text-center mb-4 reveal">// {k.label}</p>
 
         <h2
           className="font-display font-black tracking-tight mb-5 reveal gradient-text italic"
@@ -35,14 +36,14 @@ export default function Contact() {
             lineHeight: 1.05,
           }}
         >
-          Let&apos;s turn data<br />into decisions.
+          {k.line1}<br />{k.line2}
         </h2>
 
         <p
           className="font-mono text-sm tracking-wide mb-14 reveal"
           style={{ color: "var(--text-muted)" }}
         >
-          Open to data analyst &amp; data engineering internships and junior roles — hybrid or remote · Heredia, Costa Rica
+          {k.tagline}
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 reveal">

@@ -1,10 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useLang } from "@/components/ui/LangProvider";
 
-const roles = ["Data Intern at ISTS", "M.Sc. Student, Visual Analytics & Big Data", "Building ETL pipelines in Python", "SQL & cloud foundations"];
 
 export default function Hero() {
+  const { t } = useLang();
+  const h = t.hero;
+  const roles = h.roles;
   const [roleIndex, setRoleIndex] = useState(0);
   const [visible, setVisible]     = useState(true);
 
@@ -62,7 +65,7 @@ export default function Hero() {
             className="w-2 h-2 rounded-full animate-pulse"
             style={{ background: "var(--accent)", boxShadow: "0 0 8px var(--accent)" }}
           />
-          Open to data internships &amp; junior roles
+          {h.badge}
         </div>
 
         {/* Name */}
@@ -75,9 +78,9 @@ export default function Hero() {
             animation: "fadeUp 0.7s 0.1s ease both",
           }}
         >
-          <span style={{ color: "var(--text-primary)" }}>Fabian</span>
+          <span style={{ color: "var(--text-primary)" }}>{h.firstName}</span>
           <br />
-          <span className="gradient-text italic">Madriz</span>
+          <span className="gradient-text italic">{h.lastName}</span>
         </h1>
 
         {/* Rotating role */}
@@ -86,7 +89,7 @@ export default function Hero() {
           style={{ animation: "fadeUp 0.7s 0.2s ease both" }}
         >
           <span style={{ color: "var(--text-muted)", fontFamily: "JetBrains Mono, monospace", fontSize: "0.9rem" }}>
-            Currently →
+            {h.current}
           </span>
           <span
             className="font-mono text-base font-medium"
@@ -109,11 +112,7 @@ export default function Hero() {
             animation: "fadeUp 0.7s 0.3s ease both",
           }}
         >
-          Computer Systems Engineer (Universidad Fidélitas, 2025) and M.Sc. student in Visual
-          Analytics and Big Data at UNIR. I build pipelines that turn messy spreadsheets into
-          clean, documented, analysis-ready data — currently an academic data observatory for
-          ISTS with Python, data-quality rules and a star-schema model for Power BI. Background
-          in SQL Server database design, backend development and AWS fundamentals.
+          {h.description}
         </p>
 
         {/* CTAs */}
@@ -130,7 +129,7 @@ export default function Hero() {
               boxShadow: "0 0 28px var(--accent-glow)",
             }}
           >
-            Get in touch ↗
+            {h.ctaContact}
           </a>
           <a
             href="#projects"
@@ -145,7 +144,7 @@ export default function Hero() {
               (e.currentTarget as HTMLElement).style.color = "var(--text-secondary)";
             }}
           >
-            View projects →
+            {h.ctaProjects}
           </a>
         </div>
 
@@ -154,7 +153,7 @@ export default function Hero() {
           className="mt-20 flex flex-wrap gap-x-8 gap-y-2 items-center"
           style={{ animation: "fadeUp 0.7s 0.5s ease both" }}
         >
-          <span className="font-mono text-xs" style={{ color: "var(--text-muted)" }}>CORE STACK</span>
+          <span className="font-mono text-xs" style={{ color: "var(--text-muted)" }}>{h.coreStack}</span>
           {["Python", "Pandas", "SQL Server", "ETL", "pytest", "Jupyter", "Git", "Docker", "AWS", "Linux"].map((t) => (
             <span key={t} className="font-mono text-xs font-medium" style={{ color: "var(--text-muted)" }}>
               {t}
@@ -168,7 +167,7 @@ export default function Hero() {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         style={{ animation: "fadeIn 1s 1s ease both" }}
       >
-        <span className="font-mono text-xs tracking-widest" style={{ color: "var(--text-muted)" }}>scroll</span>
+        <span className="font-mono text-xs tracking-widest" style={{ color: "var(--text-muted)" }}>{h.scroll}</span>
         <div
           className="w-px h-10"
           style={{ background: "linear-gradient(to bottom, var(--accent), transparent)", animation: "float 2s ease-in-out infinite" }}
