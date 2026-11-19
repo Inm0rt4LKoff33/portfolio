@@ -23,7 +23,7 @@ const certs: {
   {
     icon: GraduationCap,
     name: "B.Sc. Computer Systems Engineering",
-    issuer: "Universidad Fidelitas · 2020–2024",
+    issuer: "Universidad Fidélitas · 2020–2025",
     status: "completed",
     label: "Graduated",
   },

@@ -8,37 +8,61 @@ import SkillTag from "@/components/ui/SkillTag";
 const projects = [
   {
     num: "01",
-    name: "Collectible Card E-Commerce",
+    name: "Academic Data Observatory",
+    kind: "Internship · ISTS · In progress",
     description:
-      "Full-stack e-commerce platform with a React + TypeScript frontend on Vercel, Supabase (PostgreSQL) and Redis cache layer via Railway. Cloud infrastructure as code using Pulumi with AWS services (S3, Lambda, API Gateway) and a full CI/CD pipeline for continuous deployment.",
-    tags: ["React", "TypeScript", "Supabase", "Redis", "Pulumi", "AWS", "CI/CD", "Vercel"],
+      "ETL pipeline that turns an institute's Excel reports into a clean, anonymized star-schema dataset for Power BI. Raw files stay untouched, each file is checked against a data contract, quality issues go to a report, and reruns never duplicate data.",
+    tags: ["Python", "Pandas", "ETL", "Data Quality", "Star Schema", "pytest"],
     accent: "var(--accent)",
-    link: "https://github.com/Inm0rt4LKoff33/aws-learning-journey",
+    link: "https://github.com/Inm0rt4LKoff33/ists-dashboard",
   },
   {
     num: "02",
-    name: "Hospitality Web Portal",
+    name: "Job Search Automation Agent",
+    kind: "Personal project · AI-assisted",
     description:
-      "Centralized digital platform for Ronald McDonald's House of Charities Costa Rica to support internal operations. Implemented RBAC for secure data handling and led migration of records into a consolidated SQL Server environment.",
-    tags: ["ASP.NET Core", "SQL Server", "RBAC", "Data Migration", "Full-Stack"],
+      "Python program that collects job postings daily from several APIs, unifies them into one schema, keeps the history in SQLite to skip duplicates, and uses the Claude API to score each posting against my profile. Built with Claude as an AI coding assistant.",
+    tags: ["Python", "REST APIs", "SQLite", "Claude API", "Automation"],
     accent: "var(--accent-light)",
     link: "#",
   },
   {
     num: "03",
-    name: "Customer Support Platform",
+    name: "AIOps Kubernetes Platform",
+    kind: "M.Sc. thesis · Early stage",
     description:
-      "Production web platform for Soporte Completo S.A supporting business-critical operations. Built with ASP.NET Core and SQL Server, with GitHub Actions CI/CD workflows, delivered within a cross-functional Agile team.",
-    tags: ["ASP.NET Core", "SQL Server", "GitHub Actions", "CI/CD", "Agile"],
+      "Thesis project to detect and explain incidents in Kubernetes with a knowledge graph. So far: a local kind cluster running Google's Online Boutique demo with generated traffic. Next: chaos-engineering faults, a PySpark pipeline, a Neo4j graph and an MCP server.",
+    tags: ["Kubernetes", "Neo4j", "PySpark", "MCP", "Observability"],
+    accent: "var(--accent)",
+    link: "https://github.com/Inm0rt4LKoff33/aiops-k8s-platform",
+  },
+  {
+    num: "04",
+    name: "Madrid Lodging EDA",
+    kind: "Data analysis project",
+    description:
+      "Exploratory analysis of a Madrid lodging dataset: data cleaning and a heatmap to study how comfort and location ratings relate to each other.",
+    tags: ["Python", "EDA", "Data Cleaning", "Visualization"],
+    accent: "var(--accent-light)",
+    link: "#",
+  },
+  {
+    num: "05",
+    name: "IT Infrastructure Management Platform",
+    kind: "Graduation project · Team of 3",
+    description:
+      "Web platform to replace the Excel sheets a company used to track its IT infrastructure (IPs, networks, credentials, users and devices). I designed the relational database and built backend modules, unit tests and email notifications, and deployed the demo on Azure.",
+    tags: ["Laravel", "SQL Server", "Database Design", "Azure"],
     accent: "var(--accent)",
     link: "#",
   },
   {
-    num: "04",
-    name: "E-Commerce Integration",
+    num: "06",
+    name: "Guest Portal for a Non-Profit",
+    kind: "Community project · Ronald McDonald House Charities CR",
     description:
-      "Invoicing module integrated with the Costa Rica Ministry of Finance API using Node.js. Automated digital receipt delivery and performed Selenium functional testing to ensure compliance before production handoff.",
-    tags: ["Node.js", "REST APIs", "Selenium", "Ministry of Finance API"],
+      "Web portal to capture guest information that the organization kept on paper. I gathered requirements directly with the client and migrated the existing records into SQL Server.",
+    tags: [".NET 8", "SQL Server", "Data Migration", "Requirements"],
     accent: "var(--accent-light)",
     link: "#",
   },
@@ -102,14 +126,17 @@ export default function Projects() {
                       className="inline-flex items-center gap-1 font-mono text-xs px-2 py-1 rounded-sm"
                       style={{ background: "rgba(148,163,184,0.08)", color: "var(--text-muted)" }}
                     >
-                      <Lock size={10} /> Private
+                      <Lock size={10} /> No public repo
                     </span>
                   )}
                 </div>
 
-                <h3 className="font-display font-bold text-xl mb-3" style={{ color: "var(--text-primary)" }}>
+                <h3 className="font-display font-bold text-xl mb-1" style={{ color: "var(--text-primary)" }}>
                   {p.name}
                 </h3>
+                <p className="font-mono text-xs tracking-wide mb-3" style={{ color: "var(--accent-muted)" }}>
+                  {p.kind}
+                </p>
                 <p className="text-sm leading-relaxed mb-6" style={{ color: "var(--text-secondary)" }}>
                   {p.description}
                 </p>

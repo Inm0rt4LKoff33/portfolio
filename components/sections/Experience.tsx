@@ -6,36 +6,28 @@ import SkillTag from "@/components/ui/SkillTag";
 
 const experiences = [
   {
-    date: "Jan 2026 — Present",
-    role: "Cloud Developer",
-    company: "Freelance · Family Project · San José, Costa Rica",
+    date: "2026 — Present",
+    role: "Data Intern — Academic Data Observatory",
+    company: "ISTS · Ecuador",
     description:
-      "Provisioned and configured AWS infrastructure (EC2, IAM, VPC) ensuring secure and scalable cloud environments. Containerized services with Docker, improving consistency across development and production. Built and maintained CI/CD pipelines using GitHub Actions, automating deployment processes. Managed Linux-based servers for system stability, performance monitoring, and issue resolution.",
-    tags: ["AWS", "Docker", "GitHub Actions", "Linux", "CI/CD"],
+      "Building the data pipeline behind the institute's academic dashboard. It takes the enrollment, withdrawal and graduation reports in Excel, validates each file against a data contract, normalizes text, dates and periods, pseudonymizes national IDs with a salted SHA-256 hash and drops personal data. Doubtful values are logged in a data-quality report instead of being fixed silently, and the curated layer is rebuilt as a star schema for Power BI on every run. Covered by 17 automated tests and documented for handover.",
+    tags: ["Python", "Pandas", "ETL", "Data Quality", "Star Schema", "pytest"],
   },
   {
-    date: "Sep 2023 — Aug 2024",
-    role: "Web Developer — Customer Support Platform",
-    company: "Soporte Completo S.A · San José, Costa Rica",
+    date: "2025 · 2 months",
+    role: "Cloud Support (Freelance)",
+    company: "Client project · Costa Rica",
     description:
-      "Developed backend solutions using ASP.NET Core and SQL Server supporting business-critical operations. Translated business requirements into scalable, maintainable technical solutions with a focus on performance. Implemented CI/CD workflows with GitHub Actions, improving deployment speed and reducing operational risk. Collaborated in an Agile team across the full delivery lifecycle, from requirements gathering to production support.",
-    tags: ["ASP.NET Core", "SQL Server", "GitHub Actions", "CI/CD", "Agile"],
-  },
-  {
-    date: "Apr 2024 — Jul 2024",
-    role: "Web Developer — Hospitality Portal",
-    company: "Ronald McDonald House Charities CR · San José, Costa Rica",
-    description:
-      "Independently designed and delivered a centralized web platform to streamline internal operations for a non-profit organization. Implemented role-based access control (RBAC) to ensure secure handling of sensitive data across staff roles. Led migration of existing records into a consolidated SQL Server environment, improving data consistency and accessibility.",
-    tags: ["SQL Server", "RBAC", "Data Migration", "Full-Stack"],
+      "Configured EC2 instances, IAM access and the VPC network of a client's AWS environment.",
+    tags: ["AWS", "EC2", "IAM", "VPC"],
   },
   {
     date: "Jan 2024 — Apr 2024",
-    role: "Web Developer — E-Commerce Integration",
-    company: "Freelance · Private Client · San José, Costa Rica",
+    role: "Freelance Developer — E-Invoicing Integration",
+    company: "Online store · San José, Costa Rica",
     description:
-      "Developed an invoicing module using Node.js integrated with the Costa Rica Ministry of Finance API. Automated digital receipt delivery, improving the end-customer checkout experience. Performed functional testing with Selenium ensuring reliability and compliance before production handoff.",
-    tags: ["Node.js", "REST APIs", "Selenium", "Ministry of Finance API", "Testing"],
+      "Integrated an online store's checkout with the Costa Rica Ministry of Finance electronic-invoicing API. Built the module that authenticates with the ministry, captures each transaction's data after purchase and emails the electronic receipt to the customer.",
+    tags: ["Node.js", "Express", "REST APIs"],
   },
 ];
 

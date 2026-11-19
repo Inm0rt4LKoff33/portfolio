@@ -1,9 +1,9 @@
 const stats = [
-  { value: "4",     label: "Years Engineering"   },
-  { value: "4",     label: "Production Projects"  },
-  { value: "AWS",   label: "Cloud Focus"          },
-  { value: "M.Sc.", label: "Big Data & Analytics" },
-  { value: "IaC",   label: "Terraform · Pulumi"   },
+  { value: "B.Sc.", label: "Systems Eng. · 2025"     },
+  { value: "M.Sc.", label: "Big Data · In progress"  },
+  { value: "ETL",   label: "Python pipelines"        },
+  { value: "SQL",   label: "Database design"         },
+  { value: "AWS",   label: "Cloud foundations"       },
 ];
 
 export default function Stats() {

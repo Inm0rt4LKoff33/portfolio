@@ -1,61 +1,76 @@
 "use client";
 
-import { Cloud, Layers, Container, Globe, Wrench, Terminal, Database, BarChart3 } from "lucide-react";
+import { Cloud, Workflow, Database, BarChart3, Wrench, Cpu, Sparkles, BookOpen } from "lucide-react";
 import { useReveal } from "@/components/ui/useReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SkillTag from "@/components/ui/SkillTag";
 
-const skills = [
+type Level = "Applied" | "Learning" | "Coursework";
+
+const skills: { icon: React.ElementType; title: string; description: string; tags: string[]; level: Level }[] = [
+  {
+    icon: Workflow,
+    title: "Data Engineering & ETL",
+    description: "Pipelines that extract institutional Excel reports, validate them against a data contract, clean and pseudonymize them, and rebuild an analysis-ready layer on every run.",
+    tags: ["Python", "Pandas", "ETL", "Parquet", "Data contracts", "Data quality", "pytest"],
+    level: "Applied",
+  },
+  {
+    icon: Database,
+    title: "Databases & Modeling",
+    description: "Relational design and normalization in SQL Server, record migration into a new database, and star-schema models (facts and dimensions) for reporting.",
+    tags: ["SQL Server", "SQLite", "Star schema", "Normalization", "Data migration"],
+    level: "Applied",
+  },
+  {
+    icon: BarChart3,
+    title: "Analysis & Visualization",
+    description: "Exploratory data analysis in notebooks and reports that explain each chart and its conclusions.",
+    tags: ["Jupyter", "EDA", "Matplotlib", "Seaborn"],
+    level: "Applied",
+  },
   {
     icon: Cloud,
     title: "Cloud & DevOps",
-    description: "Provisioning and managing cloud infrastructure across AWS, GCP, and Azure. Building CI/CD pipelines and managing deployments in Linux-based environments.",
-    tags: ["AWS (EC2, S3, IAM, VPC)", "GCP", "Azure", "GitHub Actions", "GitLab CI/CD", "Vercel", "Railway", "Linux"],
-    level: "Proficient",
-  },
-  {
-    icon: Layers,
-    title: "Infrastructure as Code",
-    description: "Defining and provisioning cloud resources programmatically for consistent, version-controlled infrastructure environments.",
-    tags: ["Terraform", "Pulumi"],
-    level: "Learning",
-  },
-  {
-    icon: Container,
-    title: "Containers & Orchestration",
-    description: "Containerizing applications with Docker for consistent environments across development and production. Hands-on Kubernetes exposure for workload orchestration.",
-    tags: ["Docker", "Kubernetes"],
-    level: "Learning",
-  },
-  {
-    icon: Globe,
-    title: "Frontend Development",
-    description: "Building responsive, production-grade user interfaces with modern frameworks across multiple commercial and personal projects.",
-    tags: ["React", "Vue.js", "Angular", "TypeScript", "JavaScript", "HTML", "CSS"],
-    level: "Proficient",
+    description: "AWS networking and access configured for a client, a demo deployed on Azure, and containers with CI/CD in a personal project. Linux is my daily operating system.",
+    tags: ["AWS (EC2, IAM, VPC, S3)", "Azure", "Docker", "GitHub Actions", "Git", "Linux"],
+    level: "Applied",
   },
   {
     icon: Wrench,
     title: "Backend & APIs",
-    description: "Designing and delivering robust backend systems and REST APIs across multiple production environments and clients.",
-    tags: ["ASP.NET Core", "Node.js", "Python", "Java", "PHP (Laravel)", "RESTful APIs"],
-    level: "Proficient",
+    description: "Web backends and API integrations built in university, community and freelance projects.",
+    tags: ["C# / ASP.NET Core / .NET 8", "Node.js / Express", "PHP / Laravel", "REST APIs", "Claude API"],
+    level: "Applied",
   },
   {
-    icon: Database,
-    title: "Databases",
-    description: "Working with relational and non-relational databases across production systems, including schema design, migrations, and performance optimization.",
-    tags: ["SQL Server", "MySQL", "MongoDB", "Supabase (PostgreSQL)", "Redis"],
-    level: "Proficient",
+    icon: Cpu,
+    title: "Big Data",
+    description: "Distributed processing studied in my master's, with Spark assignments run on Google Cloud.",
+    tags: ["Apache Spark", "PySpark", "HDFS", "Google Cloud"],
+    level: "Learning",
   },
   {
-    icon: Terminal,
-    title: "QA & Tooling",
-    description: "Ensuring production reliability through structured testing, version control workflows, and developer tooling across the full delivery lifecycle.",
-    tags: ["Selenium", "Postman", "Git", "GitHub", "GitLab", "VS Code"],
-    level: "Proficient",
+    icon: Sparkles,
+    title: "AI & Platforms",
+    description: "Model Context Protocol servers in Python and a local Kubernetes lab for my master's thesis.",
+    tags: ["MCP", "Kubernetes (kind)", "Neo4j", "Machine learning fundamentals"],
+    level: "Learning",
+  },
+  {
+    icon: BookOpen,
+    title: "Coursework",
+    description: "Tools I studied at university or in my master's but have not yet used in a project of my own.",
+    tags: ["Power BI", "MySQL", "MongoDB", "Terraform", "Java", "Vue.js", "GitLab CI/CD", "Selenium"],
+    level: "Coursework",
   },
 ];
+
+const levelStyle: Record<Level, { bg: string; color: string }> = {
+  Applied:    { bg: "var(--accent-glow)",     color: "var(--accent)"     },
+  Learning:   { bg: "rgba(234,179,8,0.08)",   color: "#ca8a04"           },
+  Coursework: { bg: "rgba(148,163,184,0.08)", color: "var(--text-muted)" },
+};
 
 export default function Skills() {
   const ref = useReveal();
@@ -102,10 +117,7 @@ export default function Skills() {
                 </div>
                 <span
                   className="font-mono text-xs px-2.5 py-1 rounded-sm"
-                  style={{
-                    background: skill.level === "Proficient" ? "var(--accent-glow)" : "rgba(234,179,8,0.08)",
-                    color: skill.level === "Proficient" ? "var(--accent)" : "#ca8a04",
-                  }}
+                  style={{ background: levelStyle[skill.level].bg, color: levelStyle[skill.level].color }}
                 >
                   {skill.level}
                 </span>

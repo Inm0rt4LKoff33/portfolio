@@ -1,11 +1,11 @@
 "use client";
 
-import { Mail, Linkedin, Github, FileDown } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 import { useReveal } from "@/components/ui/useReveal";
 
 const links = [
   { icon: Mail,     label: "Email Me",    href: "mailto:fabimv23@protonmail.com"              },
-  { icon: Linkedin, label: "LinkedIn",    href: "https://linkedin.com/in/yourprofile"          },
+  { icon: Linkedin, label: "LinkedIn",    href: "https://linkedin.com/in/fabianmadrizcr"      },
   { icon: Github,   label: "GitHub",      href: "https://github.com/Inm0rt4LKoff33"           }
 ];
 
@@ -35,14 +35,14 @@ export default function Contact() {
             lineHeight: 1.05,
           }}
         >
-          Let&apos;s build<br />something reliable.
+          Let&apos;s turn data<br />into decisions.
         </h2>
 
         <p
           className="font-mono text-sm tracking-wide mb-14 reveal"
           style={{ color: "var(--text-muted)" }}
         >
-          Open to Cloud, DevOps &amp; Full-Stack roles — remote or on-site · Heredia, Costa Rica
+          Open to data analyst &amp; data engineering internships and junior roles — hybrid or remote · Heredia, Costa Rica
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 reveal">

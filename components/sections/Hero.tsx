@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const roles = ["Cloud Developer", "DevOps Engineer", "Full-Stack Engineer", "Big Data Master's Candidate"];
+const roles = ["Data Intern at ISTS", "M.Sc. Student, Visual Analytics & Big Data", "Building ETL pipelines in Python", "SQL & cloud foundations"];
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -62,7 +62,7 @@ export default function Hero() {
             className="w-2 h-2 rounded-full animate-pulse"
             style={{ background: "var(--accent)", boxShadow: "0 0 8px var(--accent)" }}
           />
-          Available for new opportunities
+          Open to data internships &amp; junior roles
         </div>
 
         {/* Name */}
@@ -109,10 +109,11 @@ export default function Hero() {
             animation: "fadeUp 0.7s 0.3s ease both",
           }}
         >
-          Computer Systems Engineer with real-world experience delivering backend systems,
-          API integrations, and cloud infrastructure for private companies and non-profits
-          in Costa Rica. Currently pursuing a Master's in Visual Analytics and Big Data —
-          deepening expertise in data engineering, machine learning, and distributed computing.
+          Computer Systems Engineer (Universidad Fidélitas, 2025) and M.Sc. student in Visual
+          Analytics and Big Data at UNIR. I build pipelines that turn messy spreadsheets into
+          clean, documented, analysis-ready data — currently an academic data observatory for
+          ISTS with Python, data-quality rules and a star-schema model for Power BI. Background
+          in SQL Server database design, backend development and AWS fundamentals.
         </p>
 
         {/* CTAs */}
@@ -154,7 +155,7 @@ export default function Hero() {
           style={{ animation: "fadeUp 0.7s 0.5s ease both" }}
         >
           <span className="font-mono text-xs" style={{ color: "var(--text-muted)" }}>CORE STACK</span>
-          {["AWS", "Docker", "Terraform", "Pulumi", "Kubernetes", "GitHub Actions", "ASP.NET Core", "Node.js", "React", "Linux"].map((t) => (
+          {["Python", "Pandas", "SQL Server", "ETL", "pytest", "Jupyter", "Git", "Docker", "AWS", "Linux"].map((t) => (
             <span key={t} className="font-mono text-xs font-medium" style={{ color: "var(--text-muted)" }}>
               {t}
             </span>

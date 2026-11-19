@@ -18,14 +18,14 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Fabian Madriz — DevOps & Cloud Engineer",
+  title: "Fabian Madriz — Data Engineering & Analytics",
   description:
-    "Computer Systems Engineer specializing in DevOps, Site Reliability Engineering, and AWS Cloud infrastructure.",
-  keywords: ["DevOps", "SRE", "AWS", "Cloud Engineer", "Fabian Madriz", "Kubernetes", "Terraform"],
+    "Computer Systems Engineer and M.Sc. student in Visual Analytics and Big Data. Data intern building ETL pipelines, data-quality checks and analysis-ready models with Python and SQL.",
+  keywords: ["Data Engineering", "Data Analyst", "ETL", "Python", "SQL", "Power BI", "Fabian Madriz", "Costa Rica"],
   authors: [{ name: "Fabian Madriz" }],
   openGraph: {
-    title: "Fabian Madriz — DevOps & Cloud Engineer",
-    description: "Building reliable, scalable infrastructure. Open to DevOps, SRE & Cloud Engineer roles.",
+    title: "Fabian Madriz — Data Engineering & Analytics",
+    description: "Turning messy spreadsheets into clean, documented, analysis-ready data. Open to data internships and junior roles.",
     type: "website",
   },
 };
